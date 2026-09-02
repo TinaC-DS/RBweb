@@ -33,7 +33,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .hero-bg {
-            background: linear-gradient(to right, rgba(45, 100, 240, 1), rgba(45, 235, 100, 1));
+            background: linear-gradient(to bottom right, rgba(45, 100, 240, 1), rgba(45, 235, 100, 1));
         }
         @keyframes gradient-shift {
             0% { background-position: 0% 50%; opacity: 0.2; transform: translate(-50%, -50%) scale(1); }
@@ -55,15 +55,15 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-2 md:gap-3">
                     <img class="h-8 md:h-12 w-auto" src="./LOGO-R.png" alt="人本企業管顧">
-                    <span class="text-[15px] md:text-xl font-bold text-gray-900 tracking-widest leading-none mt-1">人本企業管理顧問</span>
+                    <span class="text-[15px] md:text-xl font-bold text-gray-900 tracking-widest leading-none mt-1 block lg:hidden">人本企業管理顧問</span>
                 </div>
                 <!-- 選單 -->
                 <nav class="hidden lg:flex space-x-2 xl:space-x-4">
-                    <a href="#" class="text-gray-900 hover:text-[#2D64F0] px-3 py-2 text-base font-bold transition-colors">首頁</a>
+                    <a href="#" class="text-gray-900 hover:text-[#2D64F0] px-2 xl:px-3 py-2 lg:text-sm xl:text-base font-bold whitespace-nowrap transition-colors">首頁</a>
                     
                     <!-- 關於我們 (下拉) -->
                     <div class="relative group">
-                        <a href="#" class="text-gray-900 hover:text-[#2D64F0] px-3 py-2 text-base font-bold inline-flex items-center transition-colors">
+                        <a href="#" class="text-gray-900 hover:text-[#2D64F0] px-2 xl:px-3 py-2 lg:text-sm xl:text-base font-bold inline-flex items-center whitespace-nowrap transition-colors">
                             關於我們
                         </a>
                         <div class="absolute left-0 top-full w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-100 translate-y-2 group-hover:translate-y-0">
@@ -76,7 +76,7 @@
 
                     <!-- 顧問輔導 (下拉) -->
                     <div class="relative group">
-                        <a href="#" class="text-gray-900 hover:text-[#2D64F0] px-3 py-2 text-base font-bold inline-flex items-center transition-colors">
+                        <a href="#" class="text-gray-900 hover:text-[#2D64F0] px-2 xl:px-3 py-2 lg:text-sm xl:text-base font-bold inline-flex items-center whitespace-nowrap transition-colors">
                             顧問輔導
                         </a>
                         <div class="absolute left-0 top-full w-56 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-100 translate-y-2 group-hover:translate-y-0">
@@ -88,11 +88,11 @@
                         </div>
                     </div>
 
-                    <a href="#" class="text-gray-900 hover:text-[#2D64F0] px-3 py-2 text-base font-bold transition-colors">培訓課程</a>
+                    <a href="#" class="text-gray-900 hover:text-[#2D64F0] px-2 xl:px-3 py-2 lg:text-sm xl:text-base font-bold whitespace-nowrap transition-colors">培訓課程</a>
                     
                     <!-- 管理系統 (下拉) -->
                     <div class="relative group">
-                        <a href="#" class="text-gray-900 hover:text-[#2D64F0] px-3 py-2 text-base font-bold inline-flex items-center transition-colors">
+                        <a href="#" class="text-gray-900 hover:text-[#2D64F0] px-2 xl:px-3 py-2 lg:text-sm xl:text-base font-bold inline-flex items-center whitespace-nowrap transition-colors">
                             管理系統
                         </a>
                         <div class="absolute left-0 top-full w-56 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-100 translate-y-2 group-hover:translate-y-0">
@@ -106,11 +106,11 @@
                         </div>
                     </div>
 
-                    <a href="#" class="text-gray-900 hover:text-[#2D64F0] px-3 py-2 text-base font-bold transition-colors">最新消息</a>
+                    <a href="#" class="text-gray-900 hover:text-[#2D64F0] px-2 xl:px-3 py-2 lg:text-sm xl:text-base font-bold whitespace-nowrap transition-colors">最新消息</a>
                     
                     <!-- 文章分享 (下拉) -->
                     <div class="relative group">
-                        <a href="#" class="text-gray-900 hover:text-[#2D64F0] px-3 py-2 text-base font-bold inline-flex items-center transition-colors">
+                        <a href="#" class="text-gray-900 hover:text-[#2D64F0] px-2 xl:px-3 py-2 lg:text-sm xl:text-base font-bold inline-flex items-center whitespace-nowrap transition-colors">
                             文章分享
                         </a>
                         <div class="absolute left-0 top-full w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-100 translate-y-2 group-hover:translate-y-0">
@@ -218,21 +218,24 @@
             </nav>
         </div>
     </header>
+    <!-- 行動版選單背景遮罩 -->
+    <div id="mobileMenuBackdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden lg:hidden" style="top: 3.5rem;"></div>
 	
     <div class="hero-bg relative h-auto py-16 lg:py-0 lg:h-[calc(100vh-5rem)] min-h-[450px] lg:max-h-[700px] flex items-center">
         <div class="max-w-6xl mx-auto px-8 lg:px-16 py-8 w-full text-white grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4 items-center">
-            <!-- 左側文字 (加上 lg:ml-12 讓文字區塊往畫面中央靠攏) -->
-            <div class="max-w-2xl z-10 lg:ml-12">
-                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4 tracking-wider">
+            <div class="max-w-2xl z-10 lg:ml-12 text-center md:text-left">
+                <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-4 tracking-wider">
                     以AI驅動智慧營運<br>
                     以節能實踐永續未來
                 </h1>
-                <p class="text-xl mb-8 opacity-90">
+                <p class="text-lg md:text-xl mb-8 opacity-90">
                     智慧AI軟體系統 × 全方位節能方案
                 </p>
-                <a href="#" class="inline-block bg-[#32328C] text-white font-medium px-10 py-4 rounded-full hover:opacity-90 transition shadow-lg">
-                    立即諮詢
-                </a>
+                <div>
+                    <a href="#" class="inline-block bg-[#32328C] text-white font-medium px-10 py-4 rounded-full hover:opacity-90 transition shadow-lg">
+                        立即諮詢
+                    </a>
+                </div>
             </div>
             <!-- 右側插圖輪播區塊 (移除 padding 使插圖放大，並加上 lg:-ml-12 讓它更靠近左側文字) -->
             <div class="relative w-full h-[40vh] md:h-[60vh] max-h-[550px] min-h-[300px] rounded-xl overflow-hidden p-0 lg:-ml-12">
@@ -272,8 +275,8 @@
                         <img src="./zz-01.png" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="產品 1">
                     </div>
                     <div class="w-7/12 p-4 flex flex-col justify-center md:w-full md:p-0 md:block">
-                        <p class="text-xs md:text-sm text-gray-500 font-bold mb-1 md:mb-2 tracking-wider">永續淨零</p>
-                        <h3 class="text-base md:text-2xl font-bold text-gray-900 mb-1 md:mb-3 tracking-wide">AI EMS</h3>
+                        <p class="text-[13px] md:text-sm text-gray-500 font-bold mb-1 md:mb-2 tracking-wider">永續淨零</p>
+                        <h3 class="text-lg md:text-2xl font-bold text-gray-900 mb-1 md:mb-3 tracking-wide">AI EMS</h3>
                         <p class="text-gray-600 text-xs md:text-sm leading-relaxed line-clamp-4 md:line-clamp-none">
                             導入 AI 驅動的能源管理系統，即時監控、預測並最佳化企業能耗。協助工廠與商辦精準揪出耗能痛點，輕鬆邁向 ESG 淨零碳排目標。
                         </p>
@@ -285,8 +288,8 @@
                         <img src="./zz-02.png" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="產品 2">
                     </div>
                     <div class="w-7/12 p-4 flex flex-col justify-center md:w-full md:p-0 md:block">
-                        <p class="text-xs md:text-sm text-gray-500 font-bold mb-1 md:mb-2 tracking-wider">智慧製造</p>
-                        <h3 class="text-base md:text-2xl font-bold text-gray-900 mb-1 md:mb-3 tracking-wide">AI MES</h3>
+                        <p class="text-[13px] md:text-sm text-gray-500 font-bold mb-1 md:mb-2 tracking-wider">智慧製造</p>
+                        <h3 class="text-lg md:text-2xl font-bold text-gray-900 mb-1 md:mb-3 tracking-wide">AI MES</h3>
                         <p class="text-gray-600 text-xs md:text-sm leading-relaxed line-clamp-4 md:line-clamp-none">
                             結合製造執行系統與人工智慧，即時掌握生產進度與設備狀態。透過自動排程優化與良率預測，大幅提升稼動率，實現工廠數位升級。
                         </p>
@@ -298,8 +301,8 @@
                         <img src="./zz-03.png" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="產品 3">
                     </div>
                     <div class="w-7/12 p-4 flex flex-col justify-center md:w-full md:p-0 md:block">
-                        <p class="text-xs md:text-sm text-gray-500 font-bold mb-1 md:mb-2 tracking-wider">數據洞察</p>
-                        <h3 class="text-base md:text-2xl font-bold text-gray-900 mb-1 md:mb-3 tracking-wide">AI BI</h3>
+                        <p class="text-[13px] md:text-sm text-gray-500 font-bold mb-1 md:mb-2 tracking-wider">數據洞察</p>
+                        <h3 class="text-lg md:text-2xl font-bold text-gray-900 mb-1 md:mb-3 tracking-wide">AI BI</h3>
                         <p class="text-gray-600 text-xs md:text-sm leading-relaxed line-clamp-4 md:line-clamp-none">
                             打破企業資料孤島，將繁雜數據轉化為直覺的視覺化決策報表。透過機器學習深度分析營運指標，協助管理層隨時掌握脈動，精準決策。
                         </p>
@@ -311,8 +314,8 @@
                         <img src="./zz-04.png" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="產品 4">
                     </div>
                     <div class="w-7/12 p-4 flex flex-col justify-center md:w-full md:p-0 md:block">
-                        <p class="text-xs md:text-sm text-gray-500 font-bold mb-1 md:mb-2 tracking-wider">綠能減碳</p>
-                        <h3 class="text-base md:text-2xl font-bold text-gray-900 mb-1 md:mb-3 tracking-wide">多元節能方案</h3>
+                        <p class="text-[13px] md:text-sm text-gray-500 font-bold mb-1 md:mb-2 tracking-wider">綠能減碳</p>
+                        <h3 class="text-lg md:text-2xl font-bold text-gray-900 mb-1 md:mb-3 tracking-wide">多元節能方案</h3>
                         <p class="text-gray-600 text-xs md:text-sm leading-relaxed line-clamp-4 md:line-clamp-none">
                             量身打造專屬的企業減碳計畫，涵蓋空調、空壓機及照明設備優化。結合跨平台監控，有效降低不必要的浪費，打造低碳綠色供應鏈。
                         </p>
@@ -324,8 +327,8 @@
                         <img src="./zz-05.png" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="產品 5">
                     </div>
                     <div class="w-7/12 p-4 flex flex-col justify-center md:w-full md:p-0 md:block">
-                        <p class="text-xs md:text-sm text-gray-500 font-bold mb-1 md:mb-2 tracking-wider">醫療管理</p>
-                        <h3 class="text-base md:text-2xl font-bold text-gray-900 mb-1 md:mb-3 tracking-wide">醫院臨床路徑+ABC</h3>
+                        <p class="text-[13px] md:text-sm text-gray-500 font-bold mb-1 md:mb-2 tracking-wider">醫療管理</p>
+                        <h3 class="text-lg md:text-2xl font-bold text-gray-900 mb-1 md:mb-3 tracking-wide">醫院臨床路徑+ABC</h3>
                         <p class="text-gray-600 text-xs md:text-sm leading-relaxed line-clamp-4 md:line-clamp-none">
                             結合臨床路徑與作業基礎成本制 (ABC)，精確評估醫療服務成本與資源配置。優化醫院內部營運效率，全面提升醫療品質與經營體質。
                         </p>
@@ -337,8 +340,8 @@
                         <img src="./zz-06.png" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="產品 6">
                     </div>
                     <div class="w-7/12 p-4 flex flex-col justify-center md:w-full md:p-0 md:block">
-                        <p class="text-xs md:text-sm text-gray-500 font-bold mb-1 md:mb-2 tracking-wider">智慧零售</p>
-                        <h3 class="text-base md:text-2xl font-bold text-gray-900 mb-1 md:mb-3 tracking-wide">門店銷售預測</h3>
+                        <p class="text-[13px] md:text-sm text-gray-500 font-bold mb-1 md:mb-2 tracking-wider">智慧零售</p>
+                        <h3 class="text-lg md:text-2xl font-bold text-gray-900 mb-1 md:mb-3 tracking-wide">門店銷售預測</h3>
                         <p class="text-gray-600 text-xs md:text-sm leading-relaxed line-clamp-4 md:line-clamp-none">
                             運用演算法分析歷史銷量、天氣與市場趨勢，精準預測各門店的商品需求。有效降低庫存積壓並避免缺貨損失，極大化品牌銷售利潤。
                         </p>
@@ -359,9 +362,9 @@
 
         <div class="max-w-6xl mx-auto px-8 lg:px-16 relative z-10">
             <!-- 焦點新聞 (Top part) -->
-            <div class="flex flex-col lg:flex-row gap-12 mb-20 items-center">
-                <!-- 圖片 -->
-                <div class="w-full lg:w-1/2">
+            <div class="flex flex-col lg:flex-row gap-8 md:gap-12 mb-12 md:mb-20 items-center">
+                <!-- 圖片 (手機版隱藏) -->
+                <div class="w-full lg:w-1/2 hidden md:block">
                     <!-- 可以自行替換焦點新聞圖片 -->
                     <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop" class="w-full aspect-video object-cover rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" alt="焦點新聞圖片">
                 </div>
@@ -434,52 +437,71 @@
             <!-- 科技感絲帶波紋背景 (Canvas 動態生成) -->
             <canvas id="waveCanvas" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
             <div class="max-w-6xl mx-auto px-8 lg:px-16 relative z-10">
-                <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 md:grid md:grid-cols-3 md:gap-8 md:pb-0 md:overflow-visible [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                <div class="relative w-full">
+                    <!-- 左箭頭 -->
+                    <button id="vidPrevBtn" class="absolute -left-4 top-[45%] -translate-y-1/2 z-20 md:hidden w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md text-gray-300 active:scale-95 transition-all opacity-90 hover:opacity-100">
+                        <svg class="w-6 h-6 pr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
 
-                    <!-- 影片 1 -->
-                    <div class="group cursor-pointer bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 w-[85vw] shrink-0 snap-center md:w-auto md:shrink" onclick="openVideoModal('KoWZs8CxU2U')">
-                        <div class="relative w-full aspect-video bg-gray-200 overflow-hidden">
-                            <img src="https://img.youtube.com/vi/KoWZs8CxU2U/hqdefault.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" alt="影片 1">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-[#2D64F0] transition-all duration-300">
-                                    <svg class="w-8 h-8 text-[#2D64F0] group-hover:text-white transition-colors duration-300 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    <div id="videoContainer" class="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-2 md:grid md:grid-cols-3 md:gap-8 md:pb-0 md:overflow-visible [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                        
+                        <!-- 影片 1 -->
+                        <div class="video-card group cursor-pointer bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 w-full shrink-0 snap-center md:w-auto md:shrink" onclick="openVideoModal('KoWZs8CxU2U')">
+                            <div class="relative w-full aspect-video bg-gray-200 overflow-hidden">
+                                <img src="https://img.youtube.com/vi/KoWZs8CxU2U/hqdefault.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" alt="影片 1">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-[#2D64F0] transition-all duration-300">
+                                        <svg class="w-8 h-8 text-[#2D64F0] group-hover:text-white transition-colors duration-300 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="p-4 h-14 flex items-center">
-                            <p class="text-[#2D64F0] text-sm font-bold leading-relaxed line-clamp-2 group-hover:text-gray-900 transition-colors duration-300">AI 智能轉型解決方案實務分享與未來展望</p>
-                        </div>
-                    </div>
-                    <!-- 影片 2 -->
-                    <div class="group cursor-pointer bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 w-[85vw] shrink-0 snap-center md:w-auto md:shrink" onclick="openVideoModal('KoWZs8CxU2U')">
-                        <div class="relative w-full aspect-video bg-gray-200 overflow-hidden">
-                            <img src="https://img.youtube.com/vi/KoWZs8CxU2U/hqdefault.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" alt="影片 2">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-[#2D64F0] transition-all duration-300">
-                                    <svg class="w-8 h-8 text-[#2D64F0] group-hover:text-white transition-colors duration-300 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                </div>
+                            <div class="p-4 h-14 flex items-center">
+                                <p class="text-[#2D64F0] text-sm font-bold leading-relaxed line-clamp-2 group-hover:text-gray-900 transition-colors duration-300">AI 智能轉型解決方案實務分享與未來展望</p>
                             </div>
                         </div>
-                        <div class="p-4 h-14 flex items-center">
-                            <p class="text-[#2D64F0] text-sm font-bold leading-relaxed line-clamp-2 group-hover:text-gray-900 transition-colors duration-300">企業 ESG 綠能碳盤查：從零到一的減碳策略</p>
+
+                        <!-- 影片 2 -->
+                        <div class="video-card group cursor-pointer bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 w-full shrink-0 snap-center md:w-auto md:shrink" onclick="openVideoModal('KoWZs8CxU2U')">
+                            <div class="relative w-full aspect-video bg-gray-200 overflow-hidden">
+                                <img src="https://img.youtube.com/vi/KoWZs8CxU2U/hqdefault.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" alt="影片 2">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-[#2D64F0] transition-all duration-300">
+                                        <svg class="w-8 h-8 text-[#2D64F0] group-hover:text-white transition-colors duration-300 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 h-14 flex items-center">
+                                <p class="text-[#2D64F0] text-sm font-bold leading-relaxed line-clamp-2 group-hover:text-gray-900 transition-colors duration-300">企業 ESG 綠能碳盤查：從零到一的減碳策略</p>
+                            </div>
+                        </div>
+
+                        <!-- 影片 3 -->
+                        <div class="video-card group cursor-pointer bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 w-full shrink-0 snap-center md:w-auto md:shrink" onclick="openVideoModal('KoWZs8CxU2U')">
+                            <div class="relative w-full aspect-video bg-gray-200 overflow-hidden">
+                                <img src="https://img.youtube.com/vi/KoWZs8CxU2U/hqdefault.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" alt="影片 3">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-[#2D64F0] transition-all duration-300">
+                                        <svg class="w-8 h-8 text-[#2D64F0] group-hover:text-white transition-colors duration-300 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 h-14 flex items-center">
+                                <p class="text-[#2D64F0] text-sm font-bold leading-relaxed line-clamp-2 group-hover:text-gray-900 transition-colors duration-300">打造高績效團隊：數位轉型下的企業內訓與領導力</p>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- 影片 3 -->
-                    <div class="group cursor-pointer bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 w-[85vw] shrink-0 snap-center md:w-auto md:shrink" onclick="openVideoModal('KoWZs8CxU2U')">
-                        <div class="relative w-full aspect-video bg-gray-200 overflow-hidden">
-                            <img src="https://img.youtube.com/vi/KoWZs8CxU2U/hqdefault.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" alt="影片 3">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-[#2D64F0] transition-all duration-300">
-                                    <svg class="w-8 h-8 text-[#2D64F0] group-hover:text-white transition-colors duration-300 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4 h-14 flex items-center">
-                            <p class="text-[#2D64F0] text-sm font-bold leading-relaxed line-clamp-2 group-hover:text-gray-900 transition-colors duration-300">打造高績效團隊：數位轉型下的企業內訓與領導力</p>
-                        </div>
-                    </div>
+                    <!-- 右箭頭 -->
+                    <button id="vidNextBtn" class="absolute -right-4 top-[45%] -translate-y-1/2 z-20 md:hidden w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md text-black active:scale-95 transition-all opacity-90 hover:opacity-100">
+                        <svg class="w-6 h-6 pl-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
 
+                <!-- 手機版滑動點點 -->
+                <div class="flex md:hidden justify-center items-center mt-6 space-x-3" id="videoDots">
+                    <span class="dot w-2 h-2 rounded-full bg-[#2D64F0] transition-colors"></span>
+                    <span class="dot w-2 h-2 rounded-full bg-gray-300 transition-colors"></span>
+                    <span class="dot w-2 h-2 rounded-full bg-gray-300 transition-colors"></span>
                 </div>
             </div>
         </div>
@@ -508,43 +530,46 @@
                     </div>
                 </div>
 
-                <!-- 中間：關於我們 -->
-                <div>
-                    <h4 class="text-white text-base font-bold mb-6">關於我們</h4>
-                    <ul class="space-y-4 text-sm text-white/80 font-medium">
-                        <li><a href="#" class="hover:text-white hover:font-bold transition-all">公司理念</a></li>
-                        <li><a href="#" class="hover:text-white hover:font-bold transition-all">專業團隊</a></li>
-                        <li><a href="#" class="hover:text-white hover:font-bold transition-all">顧問輔導</a></li>
-                        <li><a href="#" class="hover:text-white hover:font-bold transition-all">培訓課程</a></li>
-                        <li><a href="#" class="hover:text-white hover:font-bold transition-all">聯絡我們</a></li>
-                    </ul>
-                </div>
+                <!-- 右側三個選單容器 -->
+                <div class="lg:col-span-3 grid grid-cols-3 gap-2 md:gap-8">
+                    <!-- 中間：關於我們 -->
+                    <div>
+                        <h4 class="text-white text-sm md:text-base font-bold mb-4 md:mb-6">關於我們</h4>
+                        <ul class="space-y-3 md:space-y-4 text-xs md:text-sm text-white/80 font-medium">
+                            <li><a href="#" class="hover:text-white hover:font-bold transition-all">公司理念</a></li>
+                            <li><a href="#" class="hover:text-white hover:font-bold transition-all">專業團隊</a></li>
+                            <li><a href="#" class="hover:text-white hover:font-bold transition-all">顧問輔導</a></li>
+                            <li><a href="#" class="hover:text-white hover:font-bold transition-all">培訓課程</a></li>
+                            <li><a href="#" class="hover:text-white hover:font-bold transition-all">聯絡我們</a></li>
+                        </ul>
+                    </div>
 
-                <!-- 中間：焦點話題 -->
-                <div>
-                    <h4 class="text-white text-base font-bold mb-6">焦點話題</h4>
-                    <ul class="space-y-4 text-sm text-white/80 font-medium">
-                        <li><a href="#" class="hover:text-white hover:font-bold transition-all">最新消息</a></li>
-                        <li><a href="#" class="hover:text-white hover:font-bold transition-all">文章分享</a></li>
-                        <li><a href="#" class="hover:text-white hover:font-bold transition-all">政府補助</a></li>
-                        <li><a href="#" class="hover:text-white hover:font-bold transition-all">精彩影音</a></li>
-                    </ul>
-                </div>
+                    <!-- 中間：焦點話題 -->
+                    <div>
+                        <h4 class="text-white text-sm md:text-base font-bold mb-4 md:mb-6">焦點話題</h4>
+                        <ul class="space-y-3 md:space-y-4 text-xs md:text-sm text-white/80 font-medium">
+                            <li><a href="#" class="hover:text-white hover:font-bold transition-all">最新消息</a></li>
+                            <li><a href="#" class="hover:text-white hover:font-bold transition-all">文章分享</a></li>
+                            <li><a href="#" class="hover:text-white hover:font-bold transition-all">政府補助</a></li>
+                            <li><a href="#" class="hover:text-white hover:font-bold transition-all">精彩影音</a></li>
+                        </ul>
+                    </div>
 
-                <!-- 右側：熱門連結 -->
-                <div>
-                    <h4 class="text-white text-base font-bold mb-6">熱門連結</h4>
-                    <div class="flex flex-col items-start space-y-3">
-                        <a href="#" class="inline-block w-40 border border-white rounded py-2.5 text-sm text-white text-center hover:bg-white hover:text-[#2D64F0] active:scale-95 transition-all duration-200 font-medium hover:font-bold">AI EMS 系統</a>
-                        <a href="#" class="inline-block w-40 border border-white rounded py-2.5 text-sm text-white text-center hover:bg-white hover:text-[#2D64F0] active:scale-95 transition-all duration-200 font-medium hover:font-bold">精實生產管理</a>
-                        <a href="#" class="inline-block w-40 border border-white rounded py-2.5 text-sm text-white text-center hover:bg-white hover:text-[#2D64F0] active:scale-95 transition-all duration-200 font-medium hover:font-bold">多元節能方案</a>
+                    <!-- 右側：熱門連結 -->
+                    <div>
+                        <h4 class="text-white text-sm md:text-base font-bold mb-4 md:mb-6">熱門連結</h4>
+                        <div class="flex flex-col items-start space-y-2 md:space-y-3">
+                            <a href="#" class="inline-block w-full border border-white rounded py-1.5 md:py-2.5 text-xs md:text-sm text-white text-center hover:bg-white hover:text-[#2D64F0] active:scale-95 transition-all duration-200 font-medium hover:font-bold">AI EMS 系統</a>
+                            <a href="#" class="inline-block w-full border border-white rounded py-1.5 md:py-2.5 text-xs md:text-sm text-white text-center hover:bg-white hover:text-[#2D64F0] active:scale-95 transition-all duration-200 font-medium hover:font-bold">精實生產管理</a>
+                            <a href="#" class="inline-block w-full border border-white rounded py-1.5 md:py-2.5 text-xs md:text-sm text-white text-center hover:bg-white hover:text-[#2D64F0] active:scale-95 transition-all duration-200 font-medium hover:font-bold">多元節能方案</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- 底部版權宣告 -->
-            <div class="mt-10 pt-6 border-t border-white/30 flex justify-center items-center">
-                <p class="text-sm text-white font-medium">人本企業管理顧問有限公司 版權所有 © 1993-2026</p>
+            <div class="mt-10 pt-6 flex justify-center items-center">
+                <p class="text-xs md:text-sm text-white font-medium">人本企業管理顧問有限公司 版權所有 © 1993-2026</p>
             </div>
         </div>
     </footer>
@@ -603,16 +628,18 @@
             </div>
         </div>
     </div>
-    <!-- Cookie 同意橫幅 -->
-    <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-[#32328C] text-white p-4 pb-12 md:p-5 z-[100] transform translate-y-full transition-transform duration-500 shadow-[0_-4px_20px_rgba(0,0,0,0.3)] flex flex-col md:flex-row items-center justify-between gap-4 border-t border-[#4A4A9C]">
-        <div class="text-sm text-gray-200 flex-1 max-w-5xl mx-auto md:mx-0">
-            <p>我們使用 Cookie 來優化網站效能與提供更個人化的體驗。繼續瀏覽本網站即表示您同意我們的 <button onclick="openPrivacyModal()" class="font-bold underline text-white hover:text-gray-300 transition-colors">隱私權政策</button> 與 Cookie 使用。</p>
-        </div>
-        <div class="flex items-center space-x-3 shrink-0">
-            <button onclick="acceptCookies()" class="bg-white text-[#32328C] font-bold px-6 py-2 rounded shadow-md hover:bg-gray-200 transition-colors active:scale-95">我同意</button>
-            <button onclick="acceptCookies()" class="text-gray-400 hover:text-white transition-colors p-2" title="關閉">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
+    <!-- Cookie 同意橫幅 / 手機版彈窗 -->
+    <div id="cookieBanner" class="fixed inset-0 md:inset-auto md:bottom-0 md:left-0 md:right-0 z-[100] flex items-center justify-center md:block bg-black/60 md:bg-transparent opacity-0 md:opacity-100 md:transform md:translate-y-full transition-all duration-500 pointer-events-none">
+        <div class="bg-[#32328C] text-white p-6 md:p-5 m-4 rounded-2xl md:rounded-none shadow-2xl md:shadow-[0_-4px_20px_rgba(0,0,0,0.3)] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-4 border md:border-0 border-white/20 md:border-t md:border-[#4A4A9C] max-w-sm md:max-w-none mx-auto w-full pointer-events-auto transform scale-95 md:scale-100 transition-transform duration-500" id="cookieBannerContent">
+            <div class="text-sm md:text-sm text-gray-200 flex-1 max-w-5xl mx-auto md:mx-0 text-center md:text-left leading-relaxed">
+                <p>我們使用 Cookie 來優化網站效能與提供更個人化的體驗。繼續瀏覽本網站即表示您同意我們的 <button onclick="openPrivacyModal()" class="font-bold underline text-white hover:text-gray-300 transition-colors">隱私權政策</button> 與 Cookie 使用。</p>
+            </div>
+            <div class="flex items-center space-x-4 shrink-0 w-full md:w-auto justify-center">
+                <button onclick="acceptCookies()" class="bg-white text-[#32328C] font-bold px-8 md:px-6 py-3 md:py-2 rounded-lg md:rounded shadow-md hover:bg-gray-200 transition-colors active:scale-95 w-full md:w-auto">我同意</button>
+                <button onclick="acceptCookies()" class="text-gray-400 hover:text-white transition-colors p-2 md:block absolute md:relative top-2 right-2 md:top-auto md:right-auto" title="關閉">
+                    <svg class="w-6 h-6 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
         </div>
     </div>
     <script>
@@ -656,11 +683,13 @@
 
         // Cookie Banner 邏輯
         const cookieBanner = document.getElementById('cookieBanner');
+        const cookieBannerContent = document.getElementById('cookieBannerContent');
         
         // 檢查 localStorage，如果沒有同意過，就滑出顯示
         if (!localStorage.getItem('cookieAccepted')) {
             setTimeout(() => {
-                cookieBanner.classList.remove('translate-y-full');
+                cookieBanner.classList.remove('translate-y-full', 'opacity-0', 'pointer-events-none');
+                cookieBannerContent.classList.remove('scale-95');
             }, 1000); // 網頁載入後 1 秒滑出
         } else {
             // 如果已經同意過，直接通知 Google Analytics 開始追蹤
@@ -672,7 +701,8 @@
 
         function acceptCookies() {
             localStorage.setItem('cookieAccepted', 'true');
-            cookieBanner.classList.add('translate-y-full');
+            cookieBanner.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none');
+            cookieBannerContent.classList.add('scale-95');
             
             // 點擊同意時，通知 Google Analytics 開始追蹤
             gtag('consent', 'update', {
@@ -779,18 +809,26 @@
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenuPanel = document.getElementById('mobileMenuPanel');
         const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+        const mobileMenuBackdrop = document.getElementById('mobileMenuBackdrop');
         let isMenuOpen = false;
 
-        mobileMenuBtn.addEventListener('click', () => {
+        function toggleMobileMenu() {
             isMenuOpen = !isMenuOpen;
             if (isMenuOpen) {
                 mobileMenuPanel.classList.remove('hidden');
+                mobileMenuBackdrop.classList.remove('hidden');
                 mobileMenuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // X icon
+                document.body.style.overflow = 'hidden'; // 防止背景捲動
             } else {
                 mobileMenuPanel.classList.add('hidden');
+                mobileMenuBackdrop.classList.add('hidden');
                 mobileMenuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'); // Hamburger icon
+                document.body.style.overflow = 'auto';
             }
-        });
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        mobileMenuBackdrop.addEventListener('click', toggleMobileMenu);
 
         // Mobile Menu Accordions
         const accordions = document.querySelectorAll('.mobile-accordion-btn');
@@ -811,6 +849,58 @@
                 }
             });
         });
+
+        // Mobile Video Carousel Logic
+        const videoContainer = document.getElementById('videoContainer');
+        const vidPrevBtn = document.getElementById('vidPrevBtn');
+        const vidNextBtn = document.getElementById('vidNextBtn');
+        const videoDots = document.querySelectorAll('#videoDots .dot');
+
+        if (videoContainer && vidPrevBtn && vidNextBtn) {
+            function updateVideoControls() {
+                const scrollLeft = videoContainer.scrollLeft;
+                const maxScrollLeft = videoContainer.scrollWidth - videoContainer.clientWidth;
+                
+                // Update Arrows
+                if (scrollLeft <= 0) {
+                    vidPrevBtn.classList.replace('text-black', 'text-gray-300');
+                } else {
+                    vidPrevBtn.classList.replace('text-gray-300', 'text-black');
+                }
+                
+                if (scrollLeft >= maxScrollLeft - 5) {
+                    vidNextBtn.classList.replace('text-black', 'text-gray-300');
+                } else {
+                    vidNextBtn.classList.replace('text-gray-300', 'text-black');
+                }
+
+                // Update Dots
+                const cardWidth = videoContainer.querySelector('.video-card').offsetWidth;
+                // Add half card width for better rounding during scroll
+                const index = Math.round(scrollLeft / cardWidth);
+                videoDots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.replace('bg-gray-300', 'bg-[#2D64F0]');
+                    } else {
+                        dot.classList.replace('bg-[#2D64F0]', 'bg-gray-300');
+                    }
+                });
+            }
+
+            videoContainer.addEventListener('scroll', updateVideoControls);
+            // Initial Check
+            setTimeout(updateVideoControls, 100);
+
+            vidPrevBtn.addEventListener('click', () => {
+                const cardWidth = videoContainer.querySelector('.video-card').offsetWidth;
+                videoContainer.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+            });
+
+            vidNextBtn.addEventListener('click', () => {
+                const cardWidth = videoContainer.querySelector('.video-card').offsetWidth;
+                videoContainer.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            });
+        }
     </script>
 </body>
 </html>
